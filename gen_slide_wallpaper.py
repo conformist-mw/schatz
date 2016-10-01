@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 # coding: utf-8
+# This script provide simple tool to generate xml file for gnome|mate-appearance
+# Just run script with one arg which is a dirname
+# Every month new wallpaper here:
+#   http://www.smashingmagazine.com/tag/wallpapers/
+
 import sys
 from os import listdir, path, getcwd
 from lxml.etree import Element, SubElement, tostring
