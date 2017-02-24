@@ -1,0 +1,102 @@
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+	display: block;
+}
+.form-request {
+	background-color: #f8f8f8;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+.fresh-requests {
+	margin-bottom: 25px;
+}
+button.large {
+	border-radius: 25px;
+	width: 280px;
+}
+.border-block {
+	border-bottom: 1px solid grey;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.comments {
+	margin-bottom: 25px;
+}
+.carousel-inner {
+	outline: 3px solid #ccc;
+}
+.carousel-wrapper {
+	margin-right: 30px;
+}
+.item > div > .glyphicon-user {
+	font-size: 48px;
+	padding-top: 50%;
+}
+.butt > button {
+	margin: 40px auto;
+}
+.carousel-control {
+	background-image: none !important;
+	color: grey;
+	font-size: 48px;
+}
+.carousel-control.right{
+	position: absolute;
+	right: -65px;
+	top: 25px;	
+}
+.carousel-control.left {
+	position: absolute;
+	left: -65px;
+	top: 25px;
+}
+.glyphicon-home {
+	font-size: 50px;
+	color: #ccc;
+}
+.breadcrumb {
+	background-color: #fff;
+}
+.breadcrumb > li + li:before {
+	color: #ccc;
+	font-family: "Glyphicons Halflings";
+	content: "\e080";
+	font-size: 12px;
+}
+.tab-content {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 15px;
+}
+.request > div > h4 {
+	line-height: 70px;
+	padding-right: 10px;
+}
+.catalog a {
+	font-size: 18px;
+}
+.adblock {
+	border: 2px solid #ccc;
+}
+.adblock > div > span {
+	margin-top: 50%;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.adblock > div > p {
+	margin-bottom: 5px;
+}
+.empty {
+	height: 35px;
+}
+.company {
+	margin-top: 35px;
+	border: 3px solid #ccc;
+}
+.company > div > span {
+	margin-top: 30px;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.company > div > h1 {
+	margin-bottom: 40px;
+}
