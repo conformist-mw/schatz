@@ -1,4 +1,5 @@
 $(document).ready(function(){
-	var pathname = window.location.pathname
-	console.log(pathname)
+	var path = window.location.pathname;
+	var page = path.split('/').pop();
+	$('nav > ul > li > a[href="'+page+'"]').parent().addClass('active');
 });
