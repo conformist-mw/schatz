@@ -2,6 +2,7 @@ body {
 	background-image: url('../img/a.jpg');
 	background-repeat: repeat;
 	background-color: #39c;
+	min-width: 960px;
 }
 }
 .logo {
