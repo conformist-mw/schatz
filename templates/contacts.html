@@ -1,6 +1,51 @@
 {% extends "_base.html" %}
 
-{% block title %}Главная - Питомник такс Lieblings Schatz{% endblock %}
+{% block title %}Наши контакты - Питомник такс Lieblings Schatz{% endblock %}
 {% block content %}
-
+<h1>Наши контакты</h1>
+<p>Сергей: <span class="text-muted">+3801234567890</span></p>
+<p>Мария: <span class="text-muted">+3801234567890</span></p>
+<h3>Напишите нам:</h3>
+<div class="col-md-12 well">
+	<form action="https://formspree.io/olesm1984@gmail.com" method="POST">
+	  <div class="col-md-5">
+	  	<div class="form-group">
+	      <label for="name" class="control-label">Ваше имя</label>
+	      <div class="input-group">
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+	      	<input type="text" class="form-control" id="name" placeholder="Введите имя" name="name" required>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="inputEmail" class="control-label">Email</label>
+	      <div class="input-group">
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+	      	<input type="email" class="form-control" id="inputEmail" placeholder="Email" name="_replyto" required>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="subject" class="control-label">Тема</label>
+	      <div class="input-group">
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+	      	<input type="text" class="form-control" id="subject" placeholder="Тема сообщения" name="_subject" required>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-md-7">
+	  	<div class="form-group">
+	  		<label for="textarea" class="control-label">Текст сообщения</label>
+	  		<div class="input-group">
+	  			<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+	  			<textarea id="textarea" class="form-control" rows="6" placeholder="Введите текст" required></textarea>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="col-md-12">
+	    <div class="form-group text-right">
+	    	<input type="text" name="_gotcha" style="display:none" />
+	      <button type="submit" class="btn btn-primary btn-success">Отправить</button>
+	    </div>
+	  </div>
+	</form>
+</div>	
 {% endblock %}
