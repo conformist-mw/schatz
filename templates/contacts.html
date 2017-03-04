@@ -1,10 +1,15 @@
 {% extends "_base.html" %}
 
 {% block title %}Наши контакты - Питомник такс Lieblings Schatz{% endblock %}
+{% block head %}<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>{% endblock %}
 {% block content %}
-<h1>Наши контакты</h1>
-<p>Сергей: <span class="text-muted">+3801234567890</span></p>
-<p>Мария: <span class="text-muted">+3801234567890</span></p>
+<h3>Владелец питомника &quot;Lieblings Schatz&quot;":</h3>
+<p>Смедюк Мария</p>
+<p>+38 067 302 70 80 <span class="label label-primary">Киевстар</span></p>
+<p>+38 095 632 90 85 <span class="label label-danger">МТС</span></p>
+<p><a id="skype" href="skype:kingphoenixx?call">Skype <span class="fa-skype fa"></span></a></p>
+<h3>Мы на карте</h3>
+<div id="map"></div>
 <h3>Напишите нам:</h3>
 <div class="col-md-12 well">
 	<form action="https://formspree.io/olesm1984@gmail.com" method="POST">
@@ -36,7 +41,7 @@
 	  		<label for="textarea" class="control-label">Текст сообщения</label>
 	  		<div class="input-group">
 	  			<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-	  			<textarea id="textarea" class="form-control" rows="6" placeholder="Введите текст" required></textarea>
+	  			<textarea id="textarea" class="form-control" rows="6" placeholder="Введите текст" name="text" required></textarea>
 	  		</div>
 	  	</div>
 	  </div>
@@ -47,5 +52,8 @@
 	    </div>
 	  </div>
 	</form>
-</div>	
+</div>
 {% endblock %}
+{% block endbody %}<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm2407SoTzY0fmc3khnW8oGkgd0GtM9mU&callback=initMap">
+</script>{% endblock %}
