@@ -1,0 +1,14 @@
+{% extends "schatz/base.html" %}
+{% load static %}
+
+{% block title %}Главная - Питомник такс Lieblings Schatz{% endblock %}
+{% block content %}
+{% for photo in photos %}
+	<p>{{ photo.title }}</p>
+			<li>{% for tag in photo.tags.all %} 
+			<a href="{% url 'tagged' tag.slug %}">{{ tag }}</a> 
+		{% endfor %}</li>
+	<ul>
+	</ul>
+{% endfor %}
+{% endblock %}

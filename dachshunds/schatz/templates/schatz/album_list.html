@@ -3,4 +3,7 @@
 
 {% block title %}Главная - Питомник такс Lieblings Schatz{% endblock %}
 {% block content %}
+{% for album in albums %}
+	<p>{{ album.name }} <a href="{{ album.slug }}">{{ album.name }}</a></p>
+{% endfor %}
 {% endblock %}
