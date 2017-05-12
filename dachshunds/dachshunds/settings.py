@@ -6,7 +6,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'schatz.apps.SchatzConfig',
-    'django.contrib.sites',
+    'taggit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,3 +66,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+TAGGIT_CASE_INSENSITIVE = True
+THUMB_SIZE = 128, 128
