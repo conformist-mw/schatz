@@ -1,11 +1,7 @@
 # Site about dachshunds
 
-Site powered by github pages and available [here](http://conformist-mw.github.io/myscripts/site/index.html)
+Django project about dachshunds
 
-# How to generate
+# How to run
 
-Here used simple static site generator -- `staticjinja`.
-```bash
-$ git clone https://github.com/conformist-mw/myscripts.git
-$ python3 gensite.py
-```
+First install all requirements then run `./manage.py runserver 0:8080`
