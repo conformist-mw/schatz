@@ -55,6 +55,11 @@
 	</form>
 </div>
 {% endblock %}
-{% block endbody %}<script async defer
+{% block js_extra %}
+<script>
+	$('a#skype').click(Skype.tryAnalyzeSkypeUri('call', '0'));
+</script>
+<script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm2407SoTzY0fmc3khnW8oGkgd0GtM9mU&callback=initMap">
-</script>{% endblock %}
+</script>
+{% endblock %}
