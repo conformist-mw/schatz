@@ -16,6 +16,13 @@ class PhotoGallery(ListView):
         album_id = Album.objects.filter(slug=self.kwargs['slug'])
         return Photo.objects.filter(album_id=album_id)
 
+    def get_context_data(self, **kwargs):
+        context = super(PhotoGallery, self).get_context_data(**kwargs)
+        tags_set = [tag for photo in context['object_list'] for tag in photo.tags.all()]
+        context['tags_set'] = set(tags_set)
+        context['test'] = 'pizdec'
+        return context
+
 
 class TaggedList(ListView):
     model = Photo
@@ -23,6 +30,13 @@ class TaggedList(ListView):
 
     def get_queryset(self, *args, **kwargs):
         return Photo.objects.filter(tags__slug=self.kwargs['tag'])
+
+    def get_context_data(self, **kwargs):
+        context = super(TaggedList, self).get_context_data(**kwargs)
+        tags_set = [tag for photo in context['object_list'] for tag in photo.tags.all()]
+        context['tags_set'] = set(tags_set)
+        context['test'] = 'pizdec'
+        return context
 
 
 def index(request):

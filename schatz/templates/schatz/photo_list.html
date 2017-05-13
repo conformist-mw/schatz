@@ -12,7 +12,11 @@
 	<h2>{{ photo.album }}</h2>
 	{% endwith %}
 {% endif %}
-<div id="tags"></div>
+<div id="tags">
+	{% for tag in tags_set %}
+	<a href="{% url 'tagged' tag.slug %}">{{ tag }}</a>
+	{% endfor %}
+</div>
 <div id="blueimp-gallery" class="blueimp-gallery">
     <div class="slides"></div>
     <h3 class="title"></h3>
@@ -33,22 +37,7 @@
 {% endblock %}
 {% block js_extra %}
 <script src="{% static 'schatz/js/blueimp-gallery.min.js' %}"></script>
-
 <script>
-	function uniq(value, index, self){
-		return self.indexOf(value) === index;
-	}
-	var tags = [
-	{% for photo in photos %}
-		{% for tag in photo.tags.all %}
-			' <a href="{% url 'tagged' tag.slug %}">{{ tag }}</a>',
-		{% endfor %}
-	{% endfor %}
-	];
-	var tags = tags.filter(uniq);
-	$.each(tags, function(index, value){
-		$('#tags').append(value + ' ');
-	});
 	document.getElementById('links').onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
