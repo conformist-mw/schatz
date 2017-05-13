@@ -29,5 +29,17 @@ def index(request):
     return render(request, 'schatz/index.html')
 
 
-def gallery(request):
-    return render(request, 'schatz/gallery.html')
+def breed(request):
+    return render(request, 'schatz/breed.html')
+
+
+def puppies(request):
+    return render(request, 'schatz/puppies.html')
+
+
+def articles(request):
+    return render(request, 'schatz/articles.html')
+
+
+def contacts(request):
+    return render(request, 'schatz/contacts.html')
