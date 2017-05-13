@@ -1,0 +1,15 @@
+{% extends "schatz/base.html" %}
+{% load static %}
+
+{% block title %}Главная - Питомник такс Lieblings Schatz{% endblock %}
+{% block content %}
+<div class="col-md-10 col-md-offset-1">
+{% for album in albums %}
+	<h4 class="text-center">{{ album.name }}</h4> 
+	<p class="text-center"><a href="{{ album.slug }}"><img src="/media/{{ album.get_cover.photo }}"></a></p>
+	<p class="text-muted">{{ album.description }}</p>
+	<p class="text-muted">{{ album.date_created }}</p>
+	<hr>
+{% endfor %}
+</div>
+{% endblock %}

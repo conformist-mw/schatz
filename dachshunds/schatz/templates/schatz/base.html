@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'schatz/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'schatz/css/bootstrap-theme.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'schatz/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'schatz/css/main.css' %}">
+	<link rel="shortcut icon" href="{% static 'schatz/i/favicon.ico' %}">
+	{% block css_extra %}{% endblock %}
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="logo">
+					<img src="{% static 'schatz/i/head.png' %}" alt="Главное лого сайта">
+				</div>
+				<nav class="navbar">
+					<ul class="nav nav-pills nav-justified">
+						<li {% if "/" == request.path %} class="active" {% endif %}><a href="/">Главная</a></li>
+						<li {% if "gallery" in request.path %} class="active" {% endif %}><a href="/gallery/">Галерея</a></li>
+						<li {% if "breed" in request.path %} class="active" {% endif %}><a href="/breed/">Стандарт породы</a></li>
+						<li {% if "puppies" in request.path %} class="active" {% endif %}><a href="/puppies/">Щенки</a></li>
+						<li {% if "articles" in request.path %} class="active" {% endif %}><a href="/articles/">Статьи</a></li>
+						<li {% if "contacts" in request.path %} class="active" {% endif %}><a href="/contacts/">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-12 bg">
+				<div class="col-md-2 info-bar">
+					<a href="/gallery"><img src="{% static 'schatz/i/logo.png' %}" title="В галерею" alt="Логотип"></a>
+					<a href="http://ingrus.net/dachshund/managePerson.php?personId=1811"><img src="{% static 'schatz/i/ingruslogo.png' %}" alt="Ингрус лого"></a>
+					<p><a href="https://facebook.com/19Mariya" title="На страницу заводчика"><span class="fa-facebook fa fa-2x"> Facebook</span></a></p>
+					<p><a href="https://www.youtube.com/channel/UCv4pspgm4zDRaDbyrSu2TqA" title="Посмотреть видео"><span class="fa-youtube-play fa fa-2x"> Youtube</span></a></p>
+				</div>
+				<div class="col-md-10 content">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+			<div class="col-md-12 text-right footer">
+				<div class="col-md-10 col-md-offset-2 inner">
+					<p>2017 © <a href="https://vk.com/ssergvik">Сергей Смедюк</a><br>
+					Копирование информации с сайта только с согласия владельца питомника <b>"Lieblings Schatz"</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'schatz/js/jquery.min.js' %}"></script>
+	<script src="{% static 'schatz/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'schatz/js/main.js' %}"></script>
+	{% block js_extra %}{% endblock %}
+</body>
+</html>
