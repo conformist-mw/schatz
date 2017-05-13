@@ -1,9 +1,3 @@
-$(document).ready(function(){
-	var path = window.location.pathname;
-	var page = path.split('/').pop();
-	$('nav > ul > li > a[href="'+page+'"]').parent().addClass('active');
-});
-$('a#skype').click(Skype.tryAnalyzeSkypeUri('call', '0'));
 var api_key = 'AIzaSyDm2407SoTzY0fmc3khnW8oGkgd0GtM9mU';
 function initMap() {
   var home = {lat: 48.52446699954304, lng: 35.02604320199964};

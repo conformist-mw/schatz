@@ -80,3 +80,20 @@ li a {
 .inner {
 	padding: 10px;
 }
+#tags {
+	padding: 10px;
+}
+#tags a {
+	color: #636c72;
+	text-decoration: none;
+}
+#tags a:before {
+	font-family: FontAwesome;
+	content: "\f02b \00a0";
+	font-style: normal;
+	color: black;
+}
+#links a {
+	float: left;
+	margin: 25px;
+}
