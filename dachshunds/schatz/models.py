@@ -1,12 +1,12 @@
-from django.db import models
-from taggit.managers import TaggableManager
+from os import path
 from PIL import Image
 from io import BytesIO
-from os import path
+from django.db import models
 from django.conf import settings
+from taggit.managers import TaggableManager
 from django.core.files.base import ContentFile
-from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
+from django.db.models.signals import pre_delete
 
 
 class Album(models.Model):
@@ -16,6 +16,12 @@ class Album(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=100)
 
+    def get_cover(self):
+        if Photo.objects.filter(album=self.id).filter(is_cover=True).count() > 0:
+            return Photo.objects.filter(album=self.id).filter(is_cover=True).first()
+        else:
+            return None
+
     def __str__(self):
         return self.name
 
@@ -23,8 +29,8 @@ class Album(models.Model):
 class Photo(models.Model):
     title = models.CharField(max_length=150)
     date_created = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to='media/images/%Y/%m')
-    thumbnail = models.ImageField(upload_to='media/thumbs/%Y/%m', editable=False)
+    photo = models.ImageField(upload_to='images/%Y/%m')
+    thumbnail = models.ImageField(upload_to='thumbs/%Y/%m', editable=False)
     album = models.ForeignKey(Album)
     tags = TaggableManager()
     is_cover = models.BooleanField(default=False)
