@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Django = ">=1.11,<2.0"
+Django = ">=1.11,<3.0"
 django-taggit = "==0.22.1"
 image = "==1.5.5"
 Unidecode = "==0.4.20"
